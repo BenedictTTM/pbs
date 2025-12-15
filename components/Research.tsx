@@ -44,7 +44,7 @@ const interests: ResearchInterest[] = [
 
 export default function Research() {
     return (
-        <section id="research" className="min-h-screen py-24 px-6 md:px-24 bg-pbs-background">
+        <section id="research" className="min-h-screen py-12 md:py-24 px-6 md:px-24 bg-pbs-background">
             <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-pbs-border pb-6">
                 <h2 className="font-serif text-3xl md:text-5xl text-pbs-text-primary">Research Interests</h2>
                 <span className="font-sans text-sm text-pbs-text-muted mt-4 md:mt-0 font-light">Core Areas of Investigation</span>
@@ -83,8 +83,8 @@ export default function Research() {
                         <h4 className="font-serif text-2xl text-pbs-text-primary mb-2">Recent Publications</h4>
                         <p className="text-pbs-text-muted text-sm max-w-md">Selected works from 2024-2025 focusing on Swarm Intelligence and VANETs.</p>
                     </div>
-                    <a href="#" className="flex items-center gap-4 px-8 py-4 border border-pbs-accent text-pbs-accent hover:bg-pbs-accent hover:text-white transition-all duration-300 text-sm tracking-widest uppercase">
-                        <span>View Full Bibliography</span>
+                    <a href="https://scholar.google.com/citations?user=d9dE5RMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 px-8 py-4 border border-pbs-accent text-pbs-accent hover:bg-pbs-accent hover:text-white transition-all duration-300 text-sm tracking-widest uppercase">
+                        <span>Publication List</span>
                         <ArrowUpRight className="w-4 h-4" />
                     </a>
                 </div>

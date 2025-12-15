@@ -6,7 +6,7 @@ export default function About() {
     return (
         <section id="about" className="min-h-screen w-full flex flex-col lg:flex-row bg-pbs-background border-t border-pbs-border">
             {/* Left Column: Content */}
-            <div className="w-full lg:w-3/5 p-12 lg:p-24 flex flex-col">
+            <div className="w-full lg:w-3/5 p-6 md:p-12 lg:p-24 flex flex-col">
                 <div className="max-w-2xl space-y-16">
 
                     {/* Biography */}
@@ -63,7 +63,7 @@ export default function About() {
                 <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ease-out">
                     <div className="absolute inset-0 bg-pbs-surface flex items-center justify-center text-pbs-text-muted/20">
                         <Image
-                            src="/pbs.png"
+                            src="/pbs2.jpg"
                             alt="Dr. P. Boakye-Sekyerehene"
                             fill
                             className="object-cover"

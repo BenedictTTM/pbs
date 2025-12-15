@@ -45,14 +45,14 @@ export default function Hero() {
     return (
         <section
             ref={containerRef}
-            className="relative h-[140vh] w-full overflow-hidden flex flex-col items-center justify-center bg-pbs-background"
+            className="relative min-h-[100dvh] md:h-[140vh] w-full overflow-hidden flex flex-col items-center justify-center bg-pbs-background"
         >
             {/* Background with Parallax */}
             <div
                 ref={bgRef}
                 className="absolute inset-0 w-full h-[120%] -top-[10%] bg-cover bg-[center_top] opacity-20"
                 style={{
-                    backgroundImage: "url('/pbs.png')",
+                    backgroundImage: "url('/pbs.jpg')",
                     backgroundColor: "#FAFAFA"
                 }}
             />
