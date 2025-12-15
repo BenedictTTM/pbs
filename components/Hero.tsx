@@ -50,10 +50,9 @@ export default function Hero() {
             {/* Background with Parallax */}
             <div
                 ref={bgRef}
-                className="absolute inset-0 w-full h-[120%] -top-[10%] bg-cover bg-center opacity-10"
+                className="absolute inset-0 w-full h-[120%] -top-[10%] bg-cover bg-[center_top] opacity-20"
                 style={{
-                    backgroundImage: "url('/images/hero-abstract.jpg')", // Placeholder, will need to be replaced or provided
-                    // Fallback solid color or pattern if image missing
+                    backgroundImage: "url('/pbs.png')",
                     backgroundColor: "#FAFAFA"
                 }}
             />
@@ -62,17 +61,17 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-pbs-accent-light)_0%,_transparent_70%)] opacity-40 pointer-events-none" />
 
             {/* Content */}
-            <div ref={textRef} className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center gap-8">
-                <h1 className="font-serif text-5xl md:text-7xl font-light text-pbs-text-primary tracking-tight">
-                    Prince Boakye-Sekyerehene
+            <div ref={textRef} className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center gap-8">
+                <h1 className="font-serif text-3xl md:text-7xl font-light text-pbs-text-primary tracking-tight text-balance">
+                    Dr. P. Boakye-Sekyerehene
                 </h1>
                 <div className="w-16 h-[1px] bg-pbs-accent opacity-50" />
-                <h2 className="font-sans text-xl md:text-2xl text-pbs-text-muted font-normal">
+                <h2 className="font-sans text-lg md:text-2xl text-pbs-text-muted font-normal">
                     Lecturer, Department of Computer Science<br />
                     University of Ghana
                 </h2>
-                <p className="font-sans text-lg text-pbs-text-muted/80 max-w-2xl mt-4 leading-relaxed">
-                    Specializing in intelligent systems, emerging technologies, and the quiet architecture of digital knowledge.
+                <p className="font-sans text-sm md:text-lg text-pbs-text-muted/80 max-w-2xl mt-4 leading-relaxed">
+                    Bridging theoretical rigor with practical innovation to enhance traffic flow, autonomous systems, and academic administration.
                 </p>
             </div>
 

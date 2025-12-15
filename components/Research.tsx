@@ -1,49 +1,44 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Network, Car, Users, Brain, Activity } from "lucide-react";
 
-interface Publication {
-    id: number;
+interface ResearchInterest {
+    id: string;
     title: string;
-    year: string;
-    journal: string;
-    category: "Journal" | "Conference" | "Book Chapter";
-    size: "small" | "large";
+    description: string;
+    icon: React.ReactNode;
 }
 
-const publications: Publication[] = [
+const interests: ResearchInterest[] = [
     {
-        id: 1,
-        title: "Ethical Constraints in Autonomous Decision Making Systems",
-        year: "2024",
-        journal: "Journal of Artificial Intelligence Research",
-        category: "Journal",
-        size: "large",
+        id: "hci",
+        title: "Human-Computer Interaction (HCI)",
+        description: "Exploring the interfaces between people and computers. Understanding user behavior, usability testing, and creating intuitive, efficient user interfaces.",
+        icon: <Users className="w-6 h-6" />,
     },
     {
-        id: 2,
-        title: "Distributed Ledger Technologies for Academic Credentialing",
-        year: "2023",
-        journal: "IEEE Transactions on Services Computing",
-        category: "Journal",
-        size: "small",
+        id: "swarm",
+        title: "Swarm Intelligence (SI)",
+        description: "Investigating algorithms inspired by social insects (ants, bees) to solve complex optimization problems, including vehicle platooning.",
+        icon: <Brain className="w-6 h-6" />,
     },
     {
-        id: 3,
-        title: "Optimizing Neural Networks for Low-Power Edge Devices",
-        year: "2023",
-        journal: "International Conference on Edge Computing",
-        category: "Conference",
-        size: "small",
+        id: "vanets",
+        title: "Vehicular Ad-Hoc Networks",
+        description: "Researching wireless networks to improve traffic management and safety by enabling V2V and V2I communication.",
+        icon: <Network className="w-6 h-6" />,
     },
     {
-        id: 4,
-        title: "The Silent Interface: Minimizing Cognitive Load in Educational Software",
-        year: "2022",
-        journal: "Human-Computer Interaction",
-        category: "Journal",
-        size: "large",
+        id: "av-tech",
+        title: "Autonomous Vehicle Technology",
+        description: "Developing algorithms and systems to improve the efficiency, safety, and reliability of autonomous vehicles.",
+        icon: <Car className="w-6 h-6" />,
+    },
+    {
+        id: "ai-traffic",
+        title: "AI in Traffic Management",
+        description: "Applying artificial intelligence to optimize traffic flow, reduce congestion, and enhance road safety through intelligent systems.",
+        icon: <Activity className="w-6 h-6" />,
     },
 ];
 
@@ -51,40 +46,48 @@ export default function Research() {
     return (
         <section id="research" className="min-h-screen py-24 px-6 md:px-24 bg-pbs-background">
             <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-pbs-border pb-6">
-                <h2 className="font-serif text-3xl md:text-5xl text-pbs-text-primary">Selected Research</h2>
-                <span className="font-sans text-sm text-pbs-text-muted mt-4 md:mt-0">2018 — Present</span>
+                <h2 className="font-serif text-3xl md:text-5xl text-pbs-text-primary">Research Interests</h2>
+                <span className="font-sans text-sm text-pbs-text-muted mt-4 md:mt-0 font-light">Core Areas of Investigation</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-                {publications.map((pub) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {interests.map((item) => (
                     <div
-                        key={pub.id}
-                        className={`group relative border border-pbs-border bg-pbs-surface p-8 flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-pbs-accent-light hover:border-pbs-accent/20 ${pub.size === "large" ? "md:col-span-2" : "md:col-span-1"
-                            }`}
+                        key={item.id}
+                        className="group p-8 border border-pbs-border bg-pbs-surface hover:border-pbs-accent transition-all duration-500 hover:shadow-lg hover:shadow-pbs-accent-light flex flex-col h-full"
                     >
-                        <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-2 group-hover:translate-x-0">
-                            <ArrowUpRight className="w-6 h-6 text-pbs-accent" />
+                        <div className="mb-6 text-pbs-accent opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                            {item.icon}
                         </div>
 
-                        <div className="mt-auto">
-                            <span className="text-xs font-mono text-pbs-accent mb-2 block">{pub.category} // {pub.year}</span>
-                            <h3 className="font-serif text-2xl text-pbs-text-primary group-hover:text-pbs-accent transition-colors duration-300">
-                                {pub.title}
-                            </h3>
-                            <p className="font-sans text-sm text-pbs-text-muted mt-2">
-                                {pub.journal}
-                            </p>
-                        </div>
+                        <h3 className="font-serif text-2xl text-pbs-text-primary mb-4 group-hover:text-pbs-accent transition-colors duration-300">
+                            {item.title}
+                        </h3>
 
-                        <div className="absolute inset-0 bg-pbs-accent/0 group-hover:bg-pbs-accent-[0.02] pointer-events-none transition-colors duration-300" />
+                        <p className="font-sans text-base text-pbs-text-muted leading-relaxed flex-grow">
+                            {item.description}
+                        </p>
+
+                        <div className="mt-8 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <span className="text-xs uppercase tracking-widest text-pbs-accent flex items-center gap-2">
+                                Explore Area <ArrowUpRight className="w-3 h-3" />
+                            </span>
+                        </div>
                     </div>
                 ))}
             </div>
 
-            <div className="mt-16 text-center">
-                <a href="#" className="inline-block text-pbs-text-primary hover:text-pbs-accent border-b border-transparent hover:border-pbs-accent transition-all duration-300 pb-1 text-sm tracking-widest uppercase">
-                    View Complete Bibliography
-                </a>
+            <div className="mt-24 pt-12 border-t border-pbs-border">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="text-center md:text-left">
+                        <h4 className="font-serif text-2xl text-pbs-text-primary mb-2">Recent Publications</h4>
+                        <p className="text-pbs-text-muted text-sm max-w-md">Selected works from 2024-2025 focusing on Swarm Intelligence and VANETs.</p>
+                    </div>
+                    <a href="#" className="flex items-center gap-4 px-8 py-4 border border-pbs-accent text-pbs-accent hover:bg-pbs-accent hover:text-white transition-all duration-300 text-sm tracking-widest uppercase">
+                        <span>View Full Bibliography</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                </div>
             </div>
         </section>
     );
